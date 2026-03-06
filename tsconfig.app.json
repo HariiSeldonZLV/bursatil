@@ -4,8 +4,6 @@
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "noUncheckedIndexedAccess": true,
-
-    // Path mapping for cleaner imports.
     "paths": {
       "@/*": ["./src/*"]
     },
