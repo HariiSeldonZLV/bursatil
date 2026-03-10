@@ -10,24 +10,20 @@ import * as components from "vuetify/components"
 import * as directives from "vuetify/directives"
 import { aliases, mdi } from "vuetify/iconsets/mdi"
 
-// 🎨 Tema noir/minimalista
+// 🎨 Tema oscuro minimalista
 const vuetify = createVuetify({
   components,
   directives,
-  icons: {
-    defaultSet: "mdi",
-    aliases,
-    sets: { mdi },
-  },
+  icons: { defaultSet: "mdi", aliases, sets: { mdi } },
   theme: {
     defaultTheme: "dark",
     themes: {
       dark: {
         colors: {
-          primary: "#003ac3",   // turquesa elegante
-          secondary: "#042960", // gris oscuro profundo
-          accent: "#EEEEEE",    // gris claro para contraste
-          error: "#FF5722",     // naranja para errores
+          primary: "#003ac3",
+          secondary: "#042960",
+          accent: "#EEEEEE",
+          error: "#FF5722",
         },
       },
     },
