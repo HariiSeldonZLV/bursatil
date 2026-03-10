@@ -1,8 +1,6 @@
 import { ref, onMounted } from 'vue';
-// Aquí podrías integrar tu store o API para obtener datos reales
 const portfolio = ref([]);
 onMounted(() => {
-    // Ejemplo estático (puedes reemplazar con datos de Firestore o tu API)
     portfolio.value = [
         { symbol: 'AAPL', quantity: 10, value: 175.32 },
         { symbol: 'TSLA', quantity: 5, value: 210.45 },
