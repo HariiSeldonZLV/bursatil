@@ -15,8 +15,11 @@ const username = ref('');
 const password = ref('');
 const token = ref('');
 
+// Cambia esta URL a la de tu backend en Vercel
+const API_URL = 'https://bursatil-backend.vercel.app';
+
 async function login() {
-  const res = await fetch('http://localhost:3000/login', {
+  const res = await fetch(`${API_URL}/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username: username.value, password: password.value })
@@ -34,7 +37,7 @@ async function login() {
 
 async function getProtectedData() {
   const token = localStorage.getItem('jwt');
-  const res = await fetch('http://localhost:3000/api/data', {
+  const res = await fetch(`${API_URL}/api/data`, {
     headers: { 'Authorization': `Bearer ${token}` }
   });
 

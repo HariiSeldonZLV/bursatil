@@ -3,12 +3,19 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import rateLimit from 'express-rate-limit';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173' })); // Cambia esto a la URL de tu frontend
+
+// CORS para frontend GitHub Pages
+app.use(cors({ origin: 'https://HariiSeldonZLV.github.io' }));
+
+// Rate limiting
+const limiter = rateLimit({ windowMs: 15*60*1000, max: 100 });
+app.use(limiter);
 
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'secretkey123';
@@ -31,7 +38,7 @@ app.post('/login', (req, res) => {
   res.json({ token });
 });
 
-// Middleware para proteger rutas
+// Middleware para rutas protegidas
 function authMiddleware(req, res, next) {
   const authHeader = req.headers['authorization'];
   if (!authHeader) return res.status(401).json({ message: 'No autorizado' });
