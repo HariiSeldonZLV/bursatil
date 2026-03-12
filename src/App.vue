@@ -1,15 +1,19 @@
 <template>
-    <v-app>
+  <v-app>
     <Navbar />
+
     <v-main class="app-background pa-6">
       <router-view />
     </v-main>
-  </v-app>
 
+    <!-- Footer -->
+    <Footer />
+  </v-app>
 </template>
 
 <script setup lang="ts">
-import Navbar from "@/components/Navbar.vue"
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue"; // Importamos el nuevo footer
 </script>
 
 <style>

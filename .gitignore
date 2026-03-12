@@ -37,5 +37,6 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
-# Firebase config
-firebase.ts
+# Variables de entorno
+.env
+.env.local
