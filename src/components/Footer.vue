@@ -9,7 +9,7 @@
 
         <!-- LOGO / DESCRIPCIÓN -->
         <v-col cols="12" md="4">
-          <h5 class="footer-title white--text">NotiMolina</h5>
+          <h5 class="footer-title white--text">Desarrollado para portafolio bursátil por Denis Salinas</h5>
           <p class="footer-text white--text">
             Portal independiente de noticias bursátiles y actualidad financiera.
           </p>
