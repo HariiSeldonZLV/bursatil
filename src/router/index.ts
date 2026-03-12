@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from "vue-router"
+import { createRouter, createWebHashHistory } from "vue-router" // 👈 Cambiado a Hash History
 import DashboardView from "@/views/DashboardView.vue"
 import TransactionsView from "@/views/TransactionsView.vue"
 import MarketView from "@/views/MarketView.vue"
 import NewsView from "@/views/NewsView.vue"
 import LoginView from "@/views/LoginView.vue"
-import RegisterView from "@/views/RegisterView.vue" // 👈 importa la vista de registro
+import RegisterView from "@/views/RegisterView.vue"
 
 const routes = [
   {
@@ -37,14 +37,14 @@ const routes = [
     component: LoginView
   },
   {
-    path: "/register", // 👈 nueva ruta
+    path: "/register",
     name: "Register",
     component: RegisterView
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL), // 👈 Cambiado aquí también
   routes
 })
 
